@@ -1549,3 +1549,12 @@ LoRaMacCryptoStatus_t LoRaMacCryptoDeriveMcSessionKeyPair( AddressIdentifier_t a
 
     return LORAMAC_CRYPTO_SUCCESS;
 }
+
+void LoRaMacCryptoZeroMulticastFCnts(void)
+{
+    for( int32_t i = 0; i < LORAMAC_MAX_MC_CTX; i++ )
+    {
+        CryptoNvm->FCntList.McFCntDown[i] = FCNT_DOWN_INITIAL_VALUE;
+    }
+}
+

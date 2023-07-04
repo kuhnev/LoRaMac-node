@@ -66,7 +66,7 @@ extern "C"
  * Indicates if JoinNonce is counter based and requires to be checked on 1.0.x devices
  * \remark Only applies to LoRaWAN 1.0.x when following recomendations provided
  *         by "Technical Recommendations for Preventing State Synchronization
- *         Issues around LoRaWAN® 1.0.x Join Procedure" 
+ *         Issues around LoRaWANï¿½ 1.0.x Join Procedure" 
  *         https://lora-alliance.org/wp-content/uploads/2020/11/lorawan-1.0.x-join-synch-issues-remedies-v1.0.0.pdf
  */
 #define USE_10X_JOIN_NONCE_COUNTER_CHECK            0
@@ -331,6 +331,11 @@ LoRaMacCryptoStatus_t LoRaMacCryptoDeriveMcKEKey( KeyIdentifier_t keyID );
  * \retval                        - Status of the operation
  */
 LoRaMacCryptoStatus_t LoRaMacCryptoDeriveMcSessionKeyPair( AddressIdentifier_t addrID, uint32_t mcAddr );
+
+/*!
+ * Setting multicast frame counters to 0 for every group.
+ */
+void LoRaMacCryptoZeroMulticastFCnts(void);
 
 /*! \} addtogroup LORAMAC */
 
